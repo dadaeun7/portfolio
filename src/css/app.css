@@ -1,0 +1,15 @@
+header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+header::after{
+    content: "";
+    width: 15rem;
+}
+
+#logo {
+    width: 5rem;
+}

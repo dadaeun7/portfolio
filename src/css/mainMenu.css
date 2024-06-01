@@ -1,0 +1,36 @@
+li:first-child {
+    font-weight: bold;
+}
+
+li {
+    margin: 0.4rem 1rem;
+}
+
+.main-menu-header {
+    display: flex;
+    background-color: #1D1D1F;
+    color: white;
+    border-radius: 10rem;
+    height: 2rem;
+    align-items: flex-start;
+    justify-content: space-around;
+    font-weight: bolder;
+}
+
+.main-menu-header > * > *:first-child {
+    margin-top: 0.5rem;
+    width: 15rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu-stack-list, .menu-direct-list{
+    display: flex;
+    color: #1D1D1F;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.menu-direct-list > * > *:not(:first-child){
+    cursor: pointer;
+}
