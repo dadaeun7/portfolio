@@ -1,53 +1,109 @@
-import "../css/mainMenu.css";
-import StackList from "../js/mainMenuStack";
-import DirectList from "../js/mainMenuDirect";
 import { useState } from "react";
+import "../css/mainMenu.css";
 
-function mainMenu(){
-    return(
-        <div>
-            <MainMenuHeader />
-        </div>
-    )
-}
+export default function MainMenu(){
 
-function MainMenuHeader(){
-    return(
-    <div className="main-menu-header">
-        <MenuStack />
-        <MenuDirect />
-    </div>
-    )
-}
+    const [menuCur, setMenuCur] = useState([0,0]);
 
-function MenuStack(){
-    const [stackCur, setStackCur] = useState(false);
+    function curSwap(index){
 
-    function handleStackCur(){
-        setStackCur(!stackCur);
+        const swapArray =  menuCur.map((value, i) => {
+            if(i === index){
+                return value = !value;
+            }else{
+                return value = 0;
+            }
+        })
+
+        setMenuCur(swapArray);
     }
 
     return(
-        <div onMouseLeave={handleStackCur}>
-            <div className="main-menu-stack" onMouseEnter={handleStackCur}>기술스택</div>
-            {stackCur === true && <StackList />}
+        <div className="main-header-menu">
+            <StackPart value={menuCur[0]} curSwap={curSwap} />
+            <DirectPart value={menuCur[1]} curSwap={curSwap} />
         </div>
+
     )
 }
 
-function MenuDirect(){
-    const [directCur, setdirectCur] = useState(false);
+function StackPart({ value, curSwap }){
 
-    function handleDirectCur(){
-        setdirectCur(!directCur);
-    }
-    
+    const [ header, setHeader] = useState(false);
+
     return(
-        <div onMouseLeave={handleDirectCur}>
-            <div className="main-menu-direct" onMouseEnter={handleDirectCur}>다이렉트</div>
-            {directCur === true && <DirectList />}
-        </div>
-        
+        <ul
+            onMouseEnter={e => {
+                setHeader(true); 
+                curSwap(0); 
+            }} 
+
+            onMouseLeave={e => {
+                setHeader(false); 
+                curSwap(0);
+            }}
+        >
+            <li className="menu-stack-title">기술스택</li>
+            { value && header ? <StackPartHover /> : '' }
+        </ul>
     )
 }
-export default mainMenu;
+
+function StackPartHover(){
+    return (
+        <li className="stack-hover">
+            <ul>
+                <li>개발언어</li>
+                <li>Java</li>
+                <li>C</li>
+                <li>Linux</li>
+                <li>JavaScript</li>
+            </ul>   
+            <ul>
+                <li>디자인 툴</li>
+                <li>Photoshop</li>
+                <li>Illustrator</li>
+                <li>Figma</li>
+                <li>Blender</li>
+            </ul>
+        </li>
+    )
+}
+
+function DirectPart({value, curSwap}){
+
+    const [ direct, setDirect ] = useState(false);
+
+    return(
+        <ul
+            onMouseEnter={e => {
+                setDirect(true);
+                curSwap(1);
+            }}
+            onMouseLeave={e => {
+                setDirect(false);
+                curSwap(1);
+            }}
+        >
+            <li className="menu-direct-title">다이렉트</li>
+            {value && direct ? <DirectPartHover /> : ''}
+        </ul>
+    )
+}
+
+function DirectPartHover(){
+    return (
+        <li className="direct-hover">
+            <ul>
+                <li>Sns</li>
+                <li>github</li>
+                <li>instagram</li>
+            </ul>   
+            <ul>
+                <li>Q&a</li>
+                <li>email</li>
+                <li>board</li>
+            </ul>
+        </li>
+    )
+}
