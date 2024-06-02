@@ -3,12 +3,13 @@ li:first-child {
 }
 
 li {
-    margin: 0.4rem 1rem;
+    margin: 1rem 1rem;
     text-align: center;
 }
 
-.main-header-menu{
+.main-header-menu {
     display: flex;
+    margin-top: 0.5rem;
 }
 
 .main-header-menu > * > li:first-child {
@@ -18,6 +19,24 @@ li {
 
 .stack-hover, .direct-hover{
     display: flex;
+    justify-content: center;
+    margin-top: 0.6rem;
+}
+
+.stack-hover > *:first-child {
+    margin-right: 2rem;
+}
+
+.direct-hover > *:last-child {
+    margin-left: 2rem;
+}
+
+.stack-hover > * > *:not(:first-child) {
+    margin: 0.6rem 0;
+}
+
+.direct-hover > * > *:not(:first-child) {
+    margin: 0.6rem 0;
 }
 
 .menu-stack-title, .menu-direct-title {
@@ -25,4 +44,15 @@ li {
     color: white;
     width: 200px;
     height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-stack-title {
+    border-radius: 1rem 0 0 1rem;
+}
+
+.menu-direct-title {
+    border-radius: 0 1rem 1rem 0;
 }
