@@ -7,10 +7,11 @@ import "./index.css";
 function App() {
   return (
     <div className="App">
-      <header>
+      <header className="main-menu-header">
         <img src={logo} id="logo" alt="logo"/>
         <Menu />
       </header>
+      <div className="main-menu-background"></div>
       <body>
         <Body />
       </body>

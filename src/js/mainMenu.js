@@ -27,6 +27,27 @@ export default function MainMenu(){
     )
 }
 
+function backAnimation(){
+    const background = document.querySelector('.main-menu-background');
+    background.style.height = 0;
+    let upIndex = 0;
+
+    for(let i = 0; i < 200; i++){
+        upIndex += 1;
+        background.style.height = `${upIndex}px`;
+    }
+}
+
+function unBackAnimation(){
+    const background = document.querySelector('.main-menu-background');
+
+    for(let i = 0; i < 200; i++){
+        let curHeight = 200;
+        curHeight -= 1;
+        background.style.height = `${curHeight}px`;
+    }
+}
+
 function StackPart({ value, curSwap }){
 
     const [ header, setHeader] = useState(false);
@@ -35,12 +56,14 @@ function StackPart({ value, curSwap }){
         <ul
             onMouseEnter={e => {
                 setHeader(true); 
-                curSwap(0); 
+                curSwap(0);
+                backAnimation();
             }} 
 
             onMouseLeave={e => {
                 setHeader(false); 
                 curSwap(0);
+                unBackAnimation();
             }}
         >
             <li className="menu-stack-title">기술스택</li>
