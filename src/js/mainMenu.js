@@ -19,62 +19,90 @@ export default function MainMenu(){
     }
 
     return(
-        <div className="main-header-menu">
-            <StackPart value={menuCur[0]} curSwap={curSwap} />
-            <DirectPart value={menuCur[1]} curSwap={curSwap} />
+        <div className="main-header-menu"
+            onMouseEnter={()=>{backAnimation(true);}} 
+            onMouseLeave={()=>{backAnimation(false);}}
+        >
+            <StackPart 
+                value={menuCur[0]} 
+                curSwap={curSwap} />
+            <DirectPart 
+                value={menuCur[1]} 
+                curSwap={curSwap} />
         </div>
 
     )
 }
 
-function backAnimation(){
+function backAnimation(isState){
+
     const background = document.querySelector('.main-menu-background');
-    background.style.height = 0;
-    let upIndex = 0;
+    const mainMenuList = document.querySelector('.main-header-menu');
 
-    for(let i = 0; i < 200; i++){
-        upIndex += 1;
-        background.style.height = `${upIndex}px`;
-    }
-}
+    if(isState){
+        mainMenuList.style.zIndex = '1';
+        background.style.animationName = 'backdrop';
+        background.style.animationDuration = '0.5s';
+        background.style.height = '300px';
 
-function unBackAnimation(){
-    const background = document.querySelector('.main-menu-background');
+    }else{
+        mainMenuList.style.zIndex = '0';
+        background.style.animationName = 'unbackdrop';
+        background.style.animationDuration = '0.5s';
+        background.style.height = '0px';
 
-    for(let i = 0; i < 200; i++){
-        let curHeight = 200;
-        curHeight -= 1;
-        background.style.height = `${curHeight}px`;
-    }
+    } 
+        
 }
 
 function StackPart({ value, curSwap }){
 
-    const [ header, setHeader] = useState(false);
+    const [ stack, setStack] = useState(false);
+    const stackHover = document.querySelector('.stack-hover');
 
     return(
         <ul
-            onMouseEnter={e => {
-                setHeader(true); 
+            onMouseEnter={() => {
+                setStack(true); 
                 curSwap(0);
-                backAnimation();
             }} 
 
-            onMouseLeave={e => {
-                setHeader(false); 
+            onMouseLeave={() => {
+                setStack(false); 
                 curSwap(0);
-                unBackAnimation();
             }}
         >
             <li className="menu-stack-title">기술스택</li>
-            { value && header ? <StackPartHover /> : '' }
+            {value && stack ? <StackPartHover /> : ''}
         </ul>
     )
 }
 
+function DirectPart({ value, curSwap }){
+
+    const [ direct, setDirect ] = useState(false);
+
+    return(
+        <ul
+            onMouseEnter={() => {
+                setDirect(true);
+                curSwap(1);
+            }}
+            onMouseLeave={() => {
+                setDirect(false);
+                curSwap(1);
+            }}
+        >
+            <li className="menu-direct-title">다이렉트</li>
+            {value && direct ? <DirectPartHover /> : ''}
+        </ul>
+    )
+
+}
+
 function StackPartHover(){
     return (
-        <li className="stack-hover">
+        <div className="stack-hover">
             <ul>
                 <li>개발언어</li>
                 <li>Java</li>
@@ -89,34 +117,14 @@ function StackPartHover(){
                 <li>Figma</li>
                 <li>Blender</li>
             </ul>
-        </li>
-    )
-}
-
-function DirectPart({value, curSwap}){
-
-    const [ direct, setDirect ] = useState(false);
-
-    return(
-        <ul
-            onMouseEnter={e => {
-                setDirect(true);
-                curSwap(1);
-            }}
-            onMouseLeave={e => {
-                setDirect(false);
-                curSwap(1);
-            }}
-        >
-            <li className="menu-direct-title">다이렉트</li>
-            {value && direct ? <DirectPartHover /> : ''}
-        </ul>
+        </div>
     )
 }
 
 function DirectPartHover(){
+
     return (
-        <li className="direct-hover">
+        <div className="direct-hover">
             <ul>
                 <li>Sns</li>
                 <li>github</li>
@@ -127,6 +135,6 @@ function DirectPartHover(){
                 <li>email</li>
                 <li>board</li>
             </ul>
-        </li>
+        </div>
     )
 }

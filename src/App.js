@@ -8,10 +8,10 @@ function App() {
   return (
     <div className="App">
       <header className="main-menu-header">
+        <div className="main-menu-background"></div>
         <img src={logo} id="logo" alt="logo"/>
         <Menu />
       </header>
-      <div className="main-menu-background"></div>
       <body>
         <Body />
       </body>
