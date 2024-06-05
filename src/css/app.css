@@ -35,24 +35,28 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
-header {
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-    margin: 1rem;
-    height: 100px;
+/*---------------------------------------*/
+
+#root{
+	background-color: rgb(143, 143, 143);
+	overflow: hidden;
 }
 
-header::after{
-    content: "";
-    width: 15rem;
+.App{
+	margin: 0 auto;
+	width: 1200px;
+	background-color: white;
+	overflow: hidden;
+	height: 600px;
 }
 
-#logo {
-    width: 5rem;
+#logo{
+	position: absolute;
+	width: 50px;
 }

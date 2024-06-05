@@ -19,38 +19,62 @@ export default function MainMenu(){
     }
 
     return(
-        <div className="main-header-menu"
-            onMouseEnter={()=>{backAnimation(true);}} 
-            onMouseLeave={()=>{backAnimation(false);}}
-        >
+        <>
+            <div className="main-header-menu"
+                onMouseEnter={()=>
+                    {
+                        backAnimation(true, '120px');
+                        backBodyBlur(true, '4px');
+                    }
+                } 
+                onMouseLeave={()=>
+                    {
+                        backAnimation(false);
+                        backBodyBlur(false);
+                    }
+                }
+            >
             <StackPart 
                 value={menuCur[0]} 
                 curSwap={curSwap} />
             <DirectPart 
                 value={menuCur[1]} 
                 curSwap={curSwap} />
-        </div>
+            </div>
+            <div className="main-menu-background"></div>
+        </>
 
     )
 }
 
-function backAnimation(isState){
-
-    const background = document.querySelector('.main-menu-background');
-    const mainMenuList = document.querySelector('.main-header-menu');
+function backBodyBlur(isState, blurValue){
+    const mainBody = document.querySelector('#main-body');
 
     if(isState){
-        mainMenuList.style.zIndex = '1';
+        mainBody.style.animationName = 'blur';
+        mainBody.style.animationDuration = '0.5s';
+        mainBody.style.filter = `blur(${blurValue})`;
+    }else{
+        mainBody.style.animationName = 'unBlur';
+        mainBody.style.animationDuration = '0.5s';
+        mainBody.style.filter = 'blur(0px)';
+    }
+}
+
+function backAnimation(isState, backHeight){
+
+    const background = document.querySelector('.main-menu-background');
+
+
+    if(isState){
         background.style.animationName = 'backdrop';
         background.style.animationDuration = '0.5s';
-        background.style.height = '300px';
+        background.style.height = backHeight;
 
     }else{
-        mainMenuList.style.zIndex = '0';
         background.style.animationName = 'unbackdrop';
         background.style.animationDuration = '0.5s';
         background.style.height = '0px';
-
     } 
         
 }
@@ -58,7 +82,6 @@ function backAnimation(isState){
 function StackPart({ value, curSwap }){
 
     const [ stack, setStack] = useState(false);
-    const stackHover = document.querySelector('.stack-hover');
 
     return(
         <ul
