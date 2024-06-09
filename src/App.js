@@ -1,16 +1,13 @@
-import Menu from "../src/js/mainMenu";
-import Body from "../src/js/mainBody";
-import "../src/css/app.css";
 import "./index.css";
+import MainHeader from "./js/mainHeader";
 
 function App() {
   return (
     <div className="App">
-      <header className="main-menu-header">
-        <Menu />
+      <header>
+        <MainHeader></MainHeader>
       </header>
       <body>
-        <Body />
       </body>
     </div>
   );

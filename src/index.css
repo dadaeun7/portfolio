@@ -2,8 +2,10 @@
 
 * {
   font-family: "Gothic A1", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
+  background-color: #1D1D1F;
+  color: white;
 }
 
 ul {

@@ -1,0 +1,12 @@
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 100px;
+}
+.main-header > * {
+    width: 100px;
+}
+
+* {
+    font-size: 13px;
+}
