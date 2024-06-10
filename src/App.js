@@ -1,5 +1,6 @@
 import "./index.css";
 import MainHeader from "./js/mainHeader";
+import MainBody from "./js/mainBody";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <MainHeader></MainHeader>
       </header>
       <body>
+        <MainBody></MainBody>
       </body>
     </div>
   );

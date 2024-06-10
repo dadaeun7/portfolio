@@ -1,0 +1,39 @@
+.main-header-logo  {
+    display: flex;
+    scale: 62%;
+}
+
+.main-header-logo:hover > * {
+    border-color: rgb(75, 75, 75);
+    transition: .5s;
+}
+
+.main-header-logo:hover > *:first-child {
+    background-color: rgb(75, 75, 75);
+    transition: .5s;
+}
+
+.main-header-logo > * {
+    border-radius: 100%;
+    width: 35px;
+    height: 50px;
+    margin-left: -10px;
+    transform: rotate(50deg);
+}
+
+
+.circle-1{
+    background-color: white;
+    width: 39px;
+    height: 54px;
+}
+
+.circle-2{
+    border: solid 3px white;
+}
+
+.circle-3{
+    border: dotted 3px white;
+
+}
+

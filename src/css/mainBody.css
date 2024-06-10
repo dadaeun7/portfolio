@@ -1,0 +1,42 @@
+.main-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 130px;
+    font-weight: bold;
+}
+
+.main-body > * {
+    font-size: 150px;
+    color: #505050;
+    line-height: 1.2;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+.main-body-desgin{
+    transform: translateX(-200px);
+}
+
+.main-body-desgin:hover{
+    color: #657EBF;
+    transition: 0.4s;
+}
+
+.main-body-project{
+    transform: translateX(150px);
+}
+
+.main-body-project:hover{
+    color: #65BF89;
+    transition: 0.4s;
+}
+
+.main-body-report{
+    transform: translateX(-100px);
+}
+
+.main-body-report:hover{
+    color: #BFA665;
+    transition: 0.4s;
+}
