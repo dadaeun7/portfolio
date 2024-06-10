@@ -1,5 +1,5 @@
 * {
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: bold;
 }
 
@@ -29,7 +29,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 30px;
-    margin: 30px 70px 0 70px;
+    margin: 30px 50px 0 50px;
 }
 
 .main-header > * {
@@ -60,6 +60,7 @@
     animation-name: xHover;
     animation-duration: 1s;
     height: 30px;
+    opacity: 0.95;
 }
 
 .main-header-left-hover > * {

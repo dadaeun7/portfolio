@@ -20,11 +20,11 @@ export default function MainHeader(){
             <div className="logo-intro" 
                 style={{ 
                     fontSize: '11px',
-                    marginTop: '30px',
+                    marginTop: '20px',
                     display: 'flex',
                     justifyContent: 'center',
                     opacity: '0',
-                }}>‘Let's always try new things and show something new and different from the past.’</div>
+                }}>‘세개의 체를 이루어 예측할 수 없는 새로운것을 제공합니다.’</div>
             </>
     )
 }

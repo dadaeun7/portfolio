@@ -1,30 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Hahmlet:wght@100..900&display=swap');
+
 .main-body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 130px;
+    margin-top: 92px;
     font-weight: bold;
+    overflow: hidden;
 }
 
 .main-body > * {
-    font-size: 150px;
+    font-size: 180px;
     color: #505050;
-    line-height: 1.2;
+    line-height: 0.9;
     letter-spacing: 3px;
     cursor: pointer;
 }
 
 .main-body-desgin{
-    transform: translateX(-200px);
+    transform: translateX(-300px);
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: 400;
 }
 
-.main-body-desgin:hover{
+.main-body-desgin:hover {
     color: #657EBF;
     transition: 0.4s;
 }
 
 .main-body-project{
-    transform: translateX(150px);
+    transform: translate(150px,9px);
 }
 
 .main-body-project:hover{
@@ -33,10 +38,41 @@
 }
 
 .main-body-report{
-    transform: translateX(-100px);
+    transform: translate(-150px, 10px);
+    font-family: "Hahmlet", serif;
 }
 
 .main-body-report:hover{
     color: #BFA665;
     transition: 0.4s;
+}
+
+.main-body-cursor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 110px 80px 10px 80px;
+}
+
+@keyframes updown{
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-5px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+.mouse {
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    animation-name: updown;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
 }

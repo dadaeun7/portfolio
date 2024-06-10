@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "../css/mainLogo.css";
 
 export default function MainHeaderLogo(){
