@@ -16,12 +16,14 @@ export default function MainHeaderLogo(){
 
 function logoIntro(state){
     let intro = document.querySelector('.logo-intro');
-    let logo = document.querySelector('.main-header-logo');
+
     if(state){
         intro.style.opacity = '1';
-        intro.style.transition = '0.5s';
+        intro.style.transition = '1s';
+
     }else{
         intro.style.opacity = '0';
-        intro.style.transition = '0.5s';
+        intro.style.transition = '1s';
+
     }
 }

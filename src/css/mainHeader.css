@@ -1,40 +1,20 @@
 * {
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: bold;
-}
-
-@keyframes logo-intro{
-    0%{
-        transform: translateY(0);
-    }
-    35%{
-        transform: translateY(10px);
-    }
-    100%{
-        transform: translateY(0);
-    }
-}
-
-@keyframes xHover {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 243.672px;
-    }
 }
 
 .main-header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 30px;
-    margin: 30px 50px 0 50px;
+    margin: 40px 160px 0 160px;
+    z-index: 1;
 }
 
 .main-header > * {
     display: flex;
     align-items: center;
+    color: rgba(190, 190, 190, 0.9);
 }
 
 .main-header > *:nth-child(1){
@@ -49,27 +29,15 @@
     justify-content: end;
 }
 
-.main-header-left-hover {
+.stack-list, .direct-list{
+    position: absolute;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    border-radius: 50px;
-    background-color: rgba(255, 255, 255, 0.274);
-    padding: 0 50px;
-    animation-name: xHover;
-    animation-duration: 1s;
-    height: 30px;
-    opacity: 0.95;
+    gap: 20px;
+    background-color: rgba(107, 107, 107, 1);
+    padding: 10px 20px;
+    border-radius: 20px;
 }
 
-.main-header-left-hover > * {
-    background-color: rgba(255, 255, 255, 0.007);
-    animation-name: xHover;
-    animation-duration: 0.3s;
-}
-
-.main-header-logo:hover > .logo-intro {
-    animation-name: logo-intro;
-    animation-duration: 1s;
+.stack-list > *, .direct-list > * {
+    background-color: rgba(107, 107, 107, 1);
 }

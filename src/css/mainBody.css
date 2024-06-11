@@ -4,15 +4,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 92px;
+    margin-top: 110px;
     font-weight: bold;
     overflow: hidden;
 }
 
 .main-body > * {
-    font-size: 180px;
+    font-size: 150px;
     color: #505050;
-    line-height: 0.9;
+    line-height: 1;
     letter-spacing: 3px;
     cursor: pointer;
 }
@@ -30,6 +30,7 @@
 
 .main-body-project{
     transform: translate(150px,9px);
+    font-size: 140px;
 }
 
 .main-body-project:hover{
@@ -40,6 +41,7 @@
 .main-body-report{
     transform: translate(-150px, 10px);
     font-family: "Hahmlet", serif;
+    font-size: 145px;
 }
 
 .main-body-report:hover{
@@ -51,7 +53,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 110px 80px 10px 80px;
+    margin: 120px 80px 80px 80px;
 }
 
 @keyframes updown{
@@ -59,8 +61,8 @@
         transform: translateY(0);
     }
 
-    50%{
-        transform: translateY(-5px);
+    60%{
+        transform: translateY(4px);
     }
 
     100%{
@@ -71,8 +73,8 @@
     opacity: 0.8;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 17px;
     animation-name: updown;
-    animation-duration: 2.5s;
+    animation-duration: 1.8s;
     animation-iteration-count: infinite;
 }
